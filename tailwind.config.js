@@ -4,10 +4,16 @@ import forms from '@tailwindcss/forms';
 import typography from '@tailwindcss/typography';
 
 /** @type {import('tailwindcss').Config} */
+/* In your Tailwind configuration */
+
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
-		extend: {}
+		extend: {
+			colors: {
+				'bg-highlight': '#155e75'
+			}
+		}
 	},
 	plugins: [require('daisyui')],
 	daisyui: {
@@ -21,8 +27,8 @@ export default {
 			{
 				dark: {
 					primary: '#f8fafc',
-					secondary: '#a78bfa',
-					accent: '#7c3aed',
+					secondary: '#0e7490',
+					accent: '#0e7490',
 					neutral: '#242424',
 					'base-100': '#9ca3af',
 					'base-200': '#71717a'
