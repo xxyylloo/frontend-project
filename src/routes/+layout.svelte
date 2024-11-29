@@ -1,5 +1,7 @@
 <script>
 	import '../app.css';
+	import 'iconify-icon';
+	let theme = $state('dark');
 	let { children } = $props();
 </script>
 
