@@ -10,15 +10,14 @@
 
 	function calculateTip(percent) {
 		if (baseTotal <= 0) {
-			// Wenn der Rechnungsbetrag nicht eingegeben wurde, zeige den Alert
 			showAlert = true;
-			return; // Stoppt die Funktion, ohne die Berechnung durchzuführen
+			return;
 		}
 		tip = (baseTotal * percent) / 100;
 		total = baseTotal + tip;
 		selectedTip = percent;
 		calculatePerPerson();
-		showAlert = false; // Alert ausblenden, wenn eine gültige Eingabe erfolgt
+		showAlert = false;
 	}
 
 	function setPeople(num) {
@@ -30,7 +29,7 @@
 		if (people > 0) {
 			amountPerPerson = total / people;
 		} else {
-			amountPerPerson = 0;
+			amountPerPerson = total;
 		}
 	}
 	function resetValues() {
@@ -87,40 +86,16 @@
 			<h2 class="text-base-200 text-lg">Select Tip %</h2>
 
 			<div class="grid grid-cols-3 gap-4">
-				<button
-					onclick={() => calculateTip(5)}
-					class="bg-accent p-3 rounded-lg text-neutral text-lg {selectedTip === 5
-						? 'bg-bg-highlight'
-						: ''}">5%</button
-				>
-
-				<button
-					onclick={() => calculateTip(10)}
-					class="bg-accent p-3 rounded-lg text-neutral text-lg {selectedTip === 10
-						? 'bg-bg-highlight'
-						: ''}">10%</button
-				>
-
-				<button
-					onclick={() => calculateTip(15)}
-					class="bg-accent p-3 rounded-lg text-neutral text-lg {selectedTip === 15
-						? 'bg-bg-highlight'
-						: ''}">15%</button
-				>
-
-				<button
-					onclick={() => calculateTip(20)}
-					class="bg-accent p-3 rounded-lg text-neutral text-lg {selectedTip === 20
-						? 'bg-bg-highlight'
-						: ''}">20%</button
-				>
-
-				<button
-					onclick={() => calculateTip(50)}
-					class="bg-accent p-3 rounded-lg text-neutral text-lg {selectedTip === 50
-						? 'bg-bg-highlight'
-						: ''}">50%</button
-				>
+				{#each [5, 10, 15, 20, 50] as percent}
+					<button
+						onclick={() => calculateTip(percent)}
+						class="bg-accent p-3 rounded-lg text-neutral text-lg {selectedTip === percent
+							? 'bg-bg-highlight'
+							: ''}"
+					>
+						{percent}%
+					</button>
+				{/each}
 
 				<input
 					type="number"
