@@ -26,7 +26,8 @@ export default {
 					accent: '#0e7490',
 					neutral: '#242424',
 					'base-100': '#9ca3af',
-					'base-200': '#71717a'
+					'base-200': '#71717a',
+					'base-300': '#ffffff'
 				}
 			},
 			{
@@ -36,7 +37,8 @@ export default {
 					accent: '#0e7490',
 					neutral: '#242424',
 					'base-100': '#9ca3af',
-					'base-200': '#71717a'
+					'base-200': '#71717a',
+					'base-300': '#ffffff'
 				}
 			}
 		]
